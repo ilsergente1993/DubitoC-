@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1491248085 source:c:\users\ja\documents\github\dubitoc++\dubitoc-\main.cpp
+	<iostream>
+	"Giocatore.h"
+
+1491249137 c:\users\ja\documents\github\dubitoc++\dubitoc-\include\giocatore.h
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<string>
+
+1491247755 source:c:\users\ja\documents\github\dubitoc++\dubitoc-\src\giocatore.cpp
+	"Giocatore.h"
+
