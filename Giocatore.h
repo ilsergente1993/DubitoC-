@@ -23,6 +23,7 @@ class Giocatore {
         void scarta(void);
 
         string mostra(void);
+        int conta(void);
 
         vector<int> getCarte(void);
         int getVal(void);
