@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1491254489 source:c:\users\ja\documents\github\dubitoc++\dubitoc-\main.cpp
+1491294123 source:c:\users\ja\documents\github\dubitoc++\dubitoc-\main.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -16,7 +16,7 @@
 1491251723 source:c:\users\ja\documents\github\dubitoc++\dubitoc-\src\giocatore.cpp
 	"Giocatore.h"
 
-1491254434 c:\users\ja\documents\github\dubitoc++\dubitoc-\giocatore.h
+1491294069 c:\users\ja\documents\github\dubitoc++\dubitoc-\giocatore.h
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
@@ -24,6 +24,6 @@
 	<string>
 	<algorithm>
 
-1491254455 source:c:\users\ja\documents\github\dubitoc++\dubitoc-\giocatore.cpp
+1491294064 source:c:\users\ja\documents\github\dubitoc++\dubitoc-\giocatore.cpp
 	"Giocatore.h"
 

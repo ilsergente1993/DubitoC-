@@ -3,11 +3,7 @@
 
 Giocatore::Giocatore(int id) {
     this->id = id;
-    this->scartato[0] = -1;
-    this->scartato[1] = -1;
 }
-
-
 Giocatore::~Giocatore() {
     //dtor
 }
@@ -19,21 +15,18 @@ void Giocatore::prendi(vector<int> nn) {
     this->carte.insert(this->carte.end(), nn.begin(), nn.end());
 }
 
-void Giocatore::scarta(void){
-    int val, qu;
-    this->decisione(val, qu);
-    while(qu-- > 0) {
-        vector<int>::iterator it = find(this->carte.begin(), this->carte.end(), val);
-        if (it != this->carte.end()) {
-          iter_swap(it, this->carte.end() - 1);
+vector< pair<int, int> > Giocatore::scarta(vector< pair<int, int> > tavoloIpotetico){
+    vector< pair<int, int> > sca;
+    sca = this->decisione(tavoloIpotetico);
+
+    for (vector< pair<int, int> >::iterator it = sca.begin() ; it != sca.end(); ++it) {
+        vector<int>::iterator da_eliminare = find(this->carte.begin(), this->carte.end(), (*it).first);
+        if (da_eliminare != this->carte.end()) {
+          iter_swap(da_eliminare, this->carte.end() - 1);
           this->carte.erase(this->carte.end() - 1);
         }
-        else {
-            cout << "ERRORE: sto cercando di scartare una carta che non ho!!" << endl;
-        }
     }
-    this->scartato[0] = val;
-    this->scartato[1] = qu;
+    return sca;
 }
 
 string Giocatore::mostra(void) {
@@ -59,17 +52,20 @@ int Giocatore::conta(void){
 vector<int> Giocatore::getCarte(void) {
     return this->carte;
 }
-int Giocatore::getVal(void){
-    return this->scartato[0];
-}
-int Giocatore::getQu(void){
-    return this->scartato[1];
-}
 string Giocatore::getNome(void){
     return string(1, (char)(this->id + 65));
 }
 
-void Giocatore::decisione(int &valore, int &quantita){
-    valore = 1;
-    quantita = 1;
+bool Giocatore::haAssoDiCuori(void){
+    return (find(this->carte.begin(), this->carte.end(), this->AssoDiCuori) != this->carte.end());
+}
+
+bool Giocatore::haFinito(void){
+    return this->carte.empty();
+}
+vector< pair<int, int> > Giocatore::decisione(vector< pair<int, int> > tavoloIpotetico){
+    vector< pair<int, int> > a;
+    pair<int, int> p(1, 1);
+    a.push_back(p);
+    return a;
 }
